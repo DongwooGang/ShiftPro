@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MANAGE : EMPLOYEE</title>
+    <link rel="icon" type="image/png" href="../INDEX/images/icons/rose.ico"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="../INDEX/images/icons/rose.png" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Management
+                        </a>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Employee</a>
+                            <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Commute</a>
+                            <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Salary</a>
+                            <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Sales</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">POLL Upload</a>
+                            <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">POLL Scheduling</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Demand Prediction</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <p></p>
+        <nav class="navbar navbar-dark bg-dark justify-content-between">
+            <a class="navbar-brand">Employee</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    <div class="row">
+
+        <div class="col">
+            <form action="" method="post">
+				<table class="table" style="text-align: center;">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">EMAIL</th>
+	  <th scope="col">BEGIN DATE</th>
+	  <th scope="col">SALARY NOW</th>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <th scope="row">Jane</th>
+      <th scope="row">010-3333-4444</th>
+      <th scope="row">jane@example.com</th>
+      <th scope="row">2020-05-01</th>
+      <th scope="row">100,000</th>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <th scope="row">John</th>
+        <th scope="row">010-2323-4343</th>
+        <th scope="row">john@example.com</th>
+        <th scope="row">2020-02-01</th>
+        <th scope="row">320,000</th>
+    </tr>
+  </tbody>
+</table>
+			</form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MANAGE : POLL SCHEDULE</title>
+    <link rel="icon" type="image/png" href="../INDEX/images/icons/rose.ico"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
+    <style>
+        .container-login100-form-btn {
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .login100-form-btn {
+            font-family: Montserrat-Bold;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #fff;
+            text-transform: uppercase;
+
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            background: #57b846;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 25px;
+
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+        .login100-form-btn:hover {
+            background: #333333;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../INDEX/images/icons/rose.png" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Management
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Employee</a>
+                        <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Commute</a>
+                        <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Salary</a>
+                        <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">Sales</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">POLL Upload</a>
+                        <a class="dropdown-item bg-dark" style="color:#f7f7f7;"href="#">POLL Scheduling</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Demand Prediction</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <p></p>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a class="navbar-brand">Sales</a>
+    </nav>
+    <div class="row">
+        <div class="col">
+            <form action="#" method="post">
+                <table class="table" style="text-align: center;">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="text-center" colspan=3>From Date</th>
+                        <th scope="col" class="text-center"></th>
+                        <th scope="col" class="text-center" colspan=3>To Date</th>
+                        <th scope="col" class="text-center">Option</th>
+                        <th scope="col" class="text-center"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col" class="text-center">
+                            <select class="selectpicker" name="opt" data-style="btn-secondary" data-width="fit">
+                                <optgroup label="Year">
+                                    <option value=2020 selected>2020</option>
+                                    <option value=2021>2021</option>
+                                    <option value=2022>2022</option>
+                                    <option value=2023>2023</option>
+                                    <option value=2024>2024</option>
+                                    <option value=2025>2025</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th scope="col" class="text-center">
+                            <select class="selectpicker" name="opt" data-style="btn-secondary" data-width="fit">
+                                <optgroup label="Month">
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                    <option value=6>6</option>
+                                    <option value=7>7</option>
+                                    <option value=8>8</option>
+                                    <option value=9>9</option>
+                                    <option value=10>10</option>
+                                    <option value=11>11</option>
+                                    <option value=12>12</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th scope="col" class="text-center">
+                            <select class="selectpicker" name="opt" data-style="btn-secondary" data-width="fit">
+                                <optgroup label="Day of Month">
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                    <option value=6>6</option>
+                                    <option value=7>7</option>
+                                    <option value=8>8</option>
+                                    <option value=9>9</option>
+                                    <option value=10>10</option>
+                                    <option value=12>11</option>
+                                    <option value=12>12</option>
+                                    <option value=13>13</option>
+                                    <option value=14>14</option>
+                                    <option value=15>15</option>
+                                    <option value=16>16</option>
+                                    <option value=17>17</option>
+                                    <option value=18>18</option>
+                                    <option value=19>19</option>
+                                    <option value=20>20</option>
+                                    <option value=21>21</option>
+                                    <option value=22>22</option>
+                                    <option value=23>23</option>
+                                    <option value=24>24</option>
+                                    <option value=25>25</option>
+                                    <option value=26>26</option>
+                                    <option value=27>27</option>
+                                    <option value=28>28</option>
+                                    <option value=29>29</option>
+                                    <option value=30>30</option>
+                                    <option value=31>31</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th scope="col" class="text-center">-----</th>
+                        <th scope="col" class="text-center">
+                            <select class="selectpicker" name="opt" data-style="btn-secondary" data-width="fit">
+                                <optgroup label="Year">
+                                    <option value=2020 selected>2020</option>
+                                    <option value=2021>2021</option>
+                                    <option value=2022>2022</option>
+                                    <option value=2023>2023</option>
+                                    <option value=2024>2024</option>
+                                    <option value=2025>2025</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th scope="col" class="text-center">
+                            <select class="selectpicker" name="opt" data-style="btn-secondary" data-width="fit">
+                                <optgroup label="Month">
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                    <option value=6>6</option>
+                                    <option value=7>7</option>
+                                    <option value=8>8</option>
+                                    <option value=9>9</option>
+                                    <option value=10>10</option>
+                                    <option value=11>11</option>
+                                    <option value=12>12</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th scope="col" class="text-center">
+                            <select class="selectpicker" name="opt" data-style="btn-secondary" data-width="fit">
+                                <optgroup label="Day of Month">
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                    <option value=6>6</option>
+                                    <option value=7>7</option>
+                                    <option value=8>8</option>
+                                    <option value=9>9</option>
+                                    <option value=10>10</option>
+                                    <option value=12>11</option>
+                                    <option value=12>12</option>
+                                    <option value=13>13</option>
+                                    <option value=14>14</option>
+                                    <option value=15>15</option>
+                                    <option value=16>16</option>
+                                    <option value=17>17</option>
+                                    <option value=18>18</option>
+                                    <option value=19>19</option>
+                                    <option value=20>20</option>
+                                    <option value=21>21</option>
+                                    <option value=22>22</option>
+                                    <option value=23>23</option>
+                                    <option value=24>24</option>
+                                    <option value=25>25</option>
+                                    <option value=26>26</option>
+                                    <option value=27>27</option>
+                                    <option value=28>28</option>
+                                    <option value=29>29</option>
+                                    <option value=30>30</option>
+                                    <option value=31>31</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th scope="col" class="text-center">
+                            <select class="selectpicker" name="opt" data-style="btn-success" data-width="fit">
+                                <optgroup label="View">
+                                    <option value=1 selected>Table</option>
+                                    <option value=2>Graph</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th scope="col" class="text-right"><button class="btn btn-primary" type="submit">View Sales</button></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+            <hr>
+            <table class="table" style="text-align: center;">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">DATE</th>
+                    <th scope="col">WEEKDAY</th>
+                    <th scope="col">SALES</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">2020-05-16</th>
+                    <th scope="row">Saturday</th>
+                    <th scope="row">1,250,000</th>
+                </tr>
+                <tr>
+                    <th scope="row">2020-05-17</th>
+                    <th scope="row">Sunday</th>
+                    <th scope="row">820,000</th>
+                </tr>
+                </tbody>
+            </table>
+            <div style="width:100%;">
+                <canvas id="canvas"></canvas>
+            </div>
+
+            <script>
+                new Chart(document.getElementById("canvas"), {
+                    type: 'line',
+                    data: {
+                        labels: ['2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22'],
+                        datasets: [{
+                            label: 'SALES DATA',
+                            data: [
+                                1000000,
+                                830000,
+                                1300000,
+                                1230000,
+                                1020000,
+                                980000,
+                                1450000
+                            ],
+                            borderColor: "rgba(0, 200, 200, 1)",
+                            backgroundColor: "rgba(0, 180, 255, 0.1)",
+                            fill: true,
+                            lineTension: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        title: {
+                            display: true,
+                            text: 'Sales by t Graph'
+                        },
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        },
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Time'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    suggestedMin: 0,
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Sales'
+                                }
+                            }]
+                        }
+                    }
+                });
+
+            </script>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
